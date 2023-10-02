@@ -1,0 +1,12 @@
+Parent (iterations, seed):
+    *Create_SHM(sizeof(int))
+    rand(seed);
+    fork();
+    for(i == 0 -> iterations) {
+        SHM[i] == randomNumber;
+    }
+
+Child:
+    for(i == 0 -> iterations) {
+        num == SHM[i];
+    }

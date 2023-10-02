@@ -1,0 +1,12 @@
+PARENT:
+    CREATE SEM1, SEM2;
+    fork();
+    INPUT();
+    SIGNAL(SEM1);
+    WAIT(SEM2);
+    EXIT();
+
+CHILD:
+    WAIT(SEM1);
+    SIGNAL(SEM2);
+    EXIT();
